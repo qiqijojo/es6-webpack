@@ -61,11 +61,10 @@
     },
     set(target,key,value){
       if(key!=='sex'){
-        target[key]=value;
+        return target[key]=value;
       }
     }
   });
-
   console.table({
     name:person.name,
     sex:person.sex,
@@ -73,6 +72,12 @@
   });
 
   try {
+    person.name = 'hahahh';
+    console.table({
+      name:person.name,
+      sex:person.sex,
+      age:person.age
+    });
     person.sex='female';
   } catch (e) {
     console.log(e);
